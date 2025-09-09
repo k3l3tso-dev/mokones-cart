@@ -4,6 +4,7 @@ A sleek, fully responsive front-end e-commerce website specializing in black and
 
 
  Features:
+ 
 
 Responsive Design: Flawless experience on desktop, tablet, and mobile
 
@@ -22,6 +23,7 @@ WhatsApp Integration: Direct customer service chat link
 Local Storage: Cart persists even after browser refresh
 
 
+
  Getting Started:
 
 Follow these simple steps to run the project on your local machine.
@@ -30,6 +32,7 @@ Prerequisites
 A modern web browser (Chrome, Firefox, Safari, Edge)
 
  A code editor like VS Code for the best experience
+ 
 
 
  Simple Run (Easiest):
@@ -67,6 +70,8 @@ Test User Login: Click the user icon to try the login/registration forms (simula
 View Location: Check the "Our Location" section with interactive Google Maps
 
 Contact: Use the WhatsApp floating button for instant messaging
+
+
 
 
  Built With:
