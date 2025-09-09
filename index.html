@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mokone's Cart - Premium Black & White Store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Mokone's Cart</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <div class="search-box">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search products..."
+            />
+            <i class="fas fa-search" id="search-btn"></i>
+          </div>
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </div>
+          <div class="user-icon" id="user-icon">
+            <i class="fas fa-user"></i>
+            <div class="user-menu" id="user-menu">
+              <div id="user-status">
+                <p>Not logged in</p>
+                <a href="#" id="login-link">Login/Register</a>
+              </div>
+              <div id="user-actions" style="display: none">
+                <p>Welcome, <span id="user-name"></span></p>
+                <a href="#" id="logout-btn">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- User Modal -->
+    <div class="user-modal" id="user-modal">
+      <div class="user-modal-content">
+        <span class="close-user-modal">&times;</span>
+        <h2>Account</h2>
+        <div class="user-forms">
+          <div class="login-form active" id="login-form">
+            <h3>Login</h3>
+            <form id="login-form-element">
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <button type="submit">Login</button>
+            </form>
+            <p>
+              Don't have an account? <a href="#" id="show-register">Register</a>
+            </p>
+          </div>
+          <div class="register-form" id="register-form">
+            <h3>Register</h3>
+            <form id="register-form-element">
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email" required />
+              <input type="password" placeholder="Password" required />
+              <input type="password" placeholder="Confirm Password" required />
+              <button type="submit">Register</button>
+            </form>
+            <p>
+              Already have an account? <a href="#" id="show-login">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h2>ELEGANCE IN MONOCHROME</h2>
+          <p>Discover our exclusive black and white collection</p>
+          <button class="cta-button" id="shop-collection-btn">
+            Shop Collection
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters">
+      <div class="container">
+        <h2>Filter Products</h2>
+        <div class="filter-options">
+          <div class="filter-group">
+            <label for="price-filter">Price Range:</label>
+            <select id="price-filter">
+              <option value="all">All Prices</option>
+              <option value="0-25">$0 - $25</option>
+              <option value="25-50">$25 - $50</option>
+              <option value="50-100">$50 - $100</option>
+              <option value="100+">$100+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter">
+              <option value="all">All Categories</option>
+              <option value="Apparel">Apparel</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Home Decor">Home Decor</option>
+              <option value="Art Prints">Art Prints</option>
+            </select>
+          </div>
+          <button id="apply-filters" class="filter-btn">Apply Filters</button>
+          <button id="reset-filters" class="filter-btn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="products">
+      <div class="container">
+        <h2>Featured Products</h2>
+        <div class="products-grid" id="products-grid">
+          <!-- Products will be loaded by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="collections">
+      <div class="container">
+        <h2>Collections</h2>
+        <div class="categories-grid">
+          <div class="category-card" data-category="Apparel">
+            <div class="category-image" style="background-color: #222">
+              <i class="fas fa-tshirt"></i>
+            </div>
+            <h3>Apparel</h3>
+          </div>
+          <div class="category-card" data-category="Accessories">
+            <div class="category-image" style="background-color: #222">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3>Accessories</h3>
+          </div>
+          <div class="category-card" data-category="Home Decor">
+            <div class="category-image" style="background-color: #222">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>Home Decor</h3>
+          </div>
+          <div class="category-card" data-category="Art Prints">
+            <div class="category-image" style="background-color: #222">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Art Prints</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2>About Mokone's Cart</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Mokone's Cart is a premium online store specializing in monochrome
+              products. We believe in the timeless elegance of black and white
+              design.
+            </p>
+            <p>
+              Our carefully curated collection features high-quality apparel,
+              accessories, home decor, and art prints that embody minimalist
+              aesthetics.
+            </p>
+            <p>
+              Founded in 2023, we're committed to providing our customers with
+              exceptional products and service.
+            </p>
+          </div>
+          <div class="about-image">
+            <div
+              style="
+                background-color: #222;
+                height: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <i
+                class="fas fa-store"
+                style="font-size: 60px; color: #f5f5f5"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+      <div class="container">
+        <h2>Our Location</h2>
+        <div class="location-content">
+          <div class="location-info">
+            <h3>Visit Our Store</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 138 Berg Ave, Heatherdale
+              AH, Akasia, 0182
+            </p>
+            <p><i class="fas fa-phone"></i> +(27)63-717-3666</p>
+            <p>
+              <i class="fas fa-envelope"></i> masoho.keletsoandries@gmail.com
+            </p>
+            <p>
+              <i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM
+            </p>
+            <p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 4:00 PM</p>
+            <p><i class="fas fa-clock"></i> Sunday: Closed</p>
+            <button id="open-map" class="cta-button">
+              Open in Google Maps
+            </button>
+          </div>
+          <div class="location-map">
+            <div id="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.536997532987!2d28.09841577606131!3d-26.05972216252524!2m3!1f0!2f0!3f0!4m6!3m5!1s0x1e9573e3a3dab5a7%3A0x8b47ff4bcf0dbb0e!2s138%20Berg%20Ave%2C%20Heatherdale%20AH%2C%20Akasia%2C%200182!5e0!3m2!1sen!2sza!4v1719400000000!5m2!1sen!2sza"
+                width="100%"
+                height="300"
+                style="border: 0; border-radius: 5px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Join Our Community</h2>
+          <p>
+            Subscribe to receive updates on new products and exclusive offers
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>MOKONE'S CART</h3>
+            <p>Where simplicity meets elegance</p>
+          </div>
+          <div class="footer-section">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#products">New Arrivals</a></li>
+              <li><a href="#products">Best Sellers</a></li>
+              <li><a href="#products">Sale</a></li>
+              <li><a href="#collections">Lookbook</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="fas fa-envelope"></i> masoho.keletsoandries@gmail.com
+            </p>
+            <p><i class="fas fa-phone"></i> +(27)63-717-3666</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="#location">138 Berg Ave, Heatherdale AH, Akasia, 0182</a>
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#" id="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 MOKONE'S CART. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" id="whatsapp-float">
+      <a href="#" id="whatsapp-float-link">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us</span>
+      </a>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h3>Your Shopping Cart</h3>
+          <span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items will be loaded by JavaScript -->
+        </div>
+        <div class="cart-total">
+          <p>Total: <span id="cart-total-price">$0.00</span></p>
+
+          <!-- Payment Options -->
+          <div class="payment-options">
+            <h4>Select Payment Method</h4>
+            <div class="payment-methods">
+              <div class="payment-method">
+                <input
+                  type="radio"
+                  id="credit-card"
+                  name="payment"
+                  value="credit-card"
+                  checked
+                />
+                <label for="credit-card">Credit Card</label>
+              </div>
+              <div class="payment-method">
+                <input type="radio" id="paypal" name="payment" value="paypal" />
+                <label for="paypal">PayPal</label>
+              </div>
+              <div class="payment-method">
+                <input
+                  type="radio"
+                  id="bank-transfer"
+                  name="payment"
+                  value="bank-transfer"
+                />
+                <label for="bank-transfer">Bank Transfer</label>
+              </div>
+              <div class="payment-method">
+                <input
+                  type="radio"
+                  id="cash-on-delivery"
+                  name="payment"
+                  value="cash-on-delivery"
+                />
+                <label for="cash-on-delivery">Cash on Delivery</label>
+              </div>
+            </div>
+          </div>
+
+          <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
